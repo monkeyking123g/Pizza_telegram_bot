@@ -97,8 +97,8 @@ async def delete_item(message: types.Message):
 # registarzione handlers
 def register_handlers_admin(dp : Dispatcher):
     dp.register_message_handler(cm_start, commands=['Caricare'], state=None)
-    dp.register_message_handler(cancel_handler, state='*', commands='cancel')
-    dp.register_message_handler(cancel_handler, Text(equals='cancel', ignore_case=True), state='*')
+    dp.register_message_handler(cancel_handler, state='*', commands='exit')
+    dp.register_message_handler(cancel_handler, Text(equals='exit', ignore_case=True), state='*')
     dp.register_message_handler(load_photo, content_types=['photo'], state=FSMAdmin.photo)
     dp.register_message_handler(load_name, state=FSMAdmin.name)
     dp.register_message_handler(load_description, state=FSMAdmin.description)
